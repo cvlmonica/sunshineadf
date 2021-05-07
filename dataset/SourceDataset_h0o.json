@@ -1,0 +1,17 @@
+{
+	"name": "SourceDataset_h0o",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Vertica1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "VerticaTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "public",
+			"table": "customer_dimension"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

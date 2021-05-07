@@ -1,0 +1,9 @@
+{
+	"name": "cvladf",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "40d8c583-98d6-484e-a0e0-d2e0d8bc992b",
+		"tenantId": "bfdbd74d-491e-44bf-b670-48edac22a393"
+	}
+}

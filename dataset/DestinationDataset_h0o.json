@@ -1,0 +1,17 @@
+{
+	"name": "DestinationDataset_h0o",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSynapseAnalytics2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "customer_dimension"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

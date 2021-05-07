@@ -1,0 +1,36 @@
+{
+	"name": "Parquet1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageLS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"schema": {
+				"type": "string"
+			},
+			"table": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().table",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().schema",
+					"type": "Expression"
+				},
+				"container": "lti"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
