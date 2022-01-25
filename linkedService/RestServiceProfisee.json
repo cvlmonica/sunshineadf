@@ -1,0 +1,12 @@
+{
+	"name": "RestServiceProfisee",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://profiseepurviewpoc.centralindia.cloudapp.azure.com/profisee/rest",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
