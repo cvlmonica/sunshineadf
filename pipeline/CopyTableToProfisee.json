@@ -1,0 +1,9 @@
+{
+	"name": "CopyTableToProfisee",
+	"properties": {
+		"folder": {
+			"name": "CSV Format"
+		},
+		"annotations": []
+	}
+}

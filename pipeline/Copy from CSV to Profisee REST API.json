@@ -30,7 +30,7 @@
 						"type": "RestSink",
 						"httpRequestTimeout": "00:01:40",
 						"requestInterval": 10,
-						"requestMethod": "POST",
+						"requestMethod": "PATCH",
 						"writeBatchSize": 10000,
 						"additionalHeaders": {
 							"x-api-key": "59ef40dbd3974ea7917514edc55ea026"
@@ -102,7 +102,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"entityId": {
-								"value": "@replace(pipeline().parameters.FileFolder, 'profisee-input/', '')",
+								"value": "Customer",
 								"type": "Expression"
 							}
 						}
