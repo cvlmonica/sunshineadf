@@ -51,7 +51,7 @@
 									"type": "String"
 								},
 								"sink": {
-									"path": "$['address']"
+									"path": "$['Address Line1']"
 								}
 							},
 							{
