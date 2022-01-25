@@ -117,7 +117,7 @@
 			},
 			"FileFolder": {
 				"type": "string",
-				"defaultValue": "profisee"
+				"defaultValue": "datasource1"
 			}
 		},
 		"folder": {
