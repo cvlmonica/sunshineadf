@@ -18,7 +18,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "@concat(\n'v1/records/',\n'Customer'\n)\n",
+				"value": "@concat(\n'v1/records/',\ndataset().entityId\n)",
 				"type": "Expression"
 			}
 		},
