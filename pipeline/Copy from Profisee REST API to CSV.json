@@ -446,7 +446,13 @@
 				"outputs": [
 					{
 						"referenceName": "AzureSqlTable1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"tablename": {
+								"value": "@variables('EntityId')",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
@@ -458,7 +464,7 @@
 			},
 			"EntityId": {
 				"type": "String",
-				"defaultValue": "Customer"
+				"defaultValue": "Address"
 			}
 		},
 		"folder": {
