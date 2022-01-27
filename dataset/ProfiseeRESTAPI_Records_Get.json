@@ -42,7 +42,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "@concat(\n'records/',\ndataset().entityId, \n'/?pageSize=', string(dataset().pageSize),\n'&attributes=', dataset().attributes,\n'&filter=', dataset().filter,\n'&orderBy=', dataset().orderBy,\n'&recordCodes=', dataset().recordCodes,\n'&dbaFormat=', string(dataset().dbaFormat)\n)",
+				"value": "@concat(\n'v1/records/',\ndataset().entityId, \n'/?pageSize=', string(dataset().pageSize),\n'&attributes=', dataset().attributes,\n'&filter=', dataset().filter,\n'&orderBy=', dataset().orderBy,\n'&recordCodes=', dataset().recordCodes,\n'&dbaFormat=', string(dataset().dbaFormat)\n)",
 				"type": "Expression"
 			}
 		},
