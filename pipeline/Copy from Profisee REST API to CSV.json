@@ -185,8 +185,7 @@
 									"path": "['internalId']"
 								},
 								"sink": {
-									"name": "internalId",
-									"type": "Int64"
+									"name": "internalId"
 								}
 							},
 							{
@@ -194,8 +193,7 @@
 									"path": "['id']"
 								},
 								"sink": {
-									"name": "id",
-									"type": "String"
+									"name": "id"
 								}
 							},
 							{
@@ -203,8 +201,7 @@
 									"path": "['code']"
 								},
 								"sink": {
-									"name": "code",
-									"type": "String"
+									"name": "code"
 								}
 							},
 							{
@@ -212,8 +209,7 @@
 									"path": "['name']"
 								},
 								"sink": {
-									"name": "name",
-									"type": "String"
+									"name": "name"
 								}
 							},
 							{
@@ -221,8 +217,7 @@
 									"path": "['first Name']"
 								},
 								"sink": {
-									"name": "first Name",
-									"type": "String"
+									"name": "first Name"
 								}
 							},
 							{
@@ -230,8 +225,7 @@
 									"path": "['last Name']"
 								},
 								"sink": {
-									"name": "last Name",
-									"type": "String"
+									"name": "last Name"
 								}
 							},
 							{
@@ -239,8 +233,15 @@
 									"path": "['tax ID']"
 								},
 								"sink": {
-									"name": "tax ID",
-									"type": "String"
+									"name": "tax ID"
+								}
+							},
+							{
+								"source": {
+									"path": "['category']"
+								},
+								"sink": {
+									"name": "category"
 								}
 							},
 							{
@@ -248,8 +249,7 @@
 									"path": "['parent Customer']"
 								},
 								"sink": {
-									"name": "parent Customer",
-									"type": "String"
+									"name": "parent Customer"
 								}
 							},
 							{
@@ -257,8 +257,7 @@
 									"path": "['model Confidence']"
 								},
 								"sink": {
-									"name": "model Confidence",
-									"type": "Int64"
+									"name": "model Confidence"
 								}
 							},
 							{
@@ -266,8 +265,7 @@
 									"path": "['record Source']"
 								},
 								"sink": {
-									"name": "record Source",
-									"type": "String"
+									"name": "record Source"
 								}
 							},
 							{
@@ -275,8 +273,7 @@
 									"path": "['match Status']"
 								},
 								"sink": {
-									"name": "match Status",
-									"type": "String"
+									"name": "match Status"
 								}
 							},
 							{
@@ -284,8 +281,7 @@
 									"path": "['match Cluster']"
 								},
 								"sink": {
-									"name": "match Cluster",
-									"type": "String"
+									"name": "match Cluster"
 								}
 							},
 							{
@@ -293,8 +289,7 @@
 									"path": "['match Member']"
 								},
 								"sink": {
-									"name": "match Member",
-									"type": "String"
+									"name": "match Member"
 								}
 							},
 							{
@@ -302,125 +297,72 @@
 									"path": "['match Strategy']"
 								},
 								"sink": {
-									"name": "match Strategy",
-									"type": "String"
+									"name": "match Strategy"
 								}
 							},
 							{
 								"source": {
 									"path": "['match DateTime']"
-								},
-								"sink": {
-									"name": "match DateTime",
-									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "['match MultiGroup']"
-								},
-								"sink": {
-									"name": "match MultiGroup",
-									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "['match User']"
-								},
-								"sink": {
-									"name": "match User",
-									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "['golden Record']"
-								},
-								"sink": {
-									"name": "golden Record",
-									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "['proposed Count']"
-								},
-								"sink": {
-									"name": "proposed Count",
-									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "['approved Count']"
-								},
-								"sink": {
-									"name": "approved Count",
-									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "['enterDTM']"
-								},
-								"sink": {
-									"name": "enterDTM",
-									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "['enterUserName']"
-								},
-								"sink": {
-									"name": "enterUserName",
-									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "['lastChgDTM']"
-								},
-								"sink": {
-									"name": "lastChgDTM",
-									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "['lastChgUserName']"
-								},
-								"sink": {
-									"name": "lastChgUserName",
-									"type": "String"
 								}
 							},
 							{
 								"source": {
 									"path": "['validationStatusID']"
-								},
-								"sink": {
-									"name": "validationStatusID",
-									"type": "Int32"
 								}
 							},
 							{
 								"source": {
 									"path": "['canUpdate']"
-								},
-								"sink": {
-									"name": "canUpdate",
-									"type": "Boolean"
 								}
 							},
 							{
 								"source": {
 									"path": "['canDelete']"
-								},
-								"sink": {
-									"name": "canDelete",
-									"type": "Boolean"
 								}
 							}
 						],
@@ -464,7 +406,7 @@
 			},
 			"EntityId": {
 				"type": "String",
-				"defaultValue": "Address"
+				"defaultValue": "Customer"
 			}
 		},
 		"folder": {
