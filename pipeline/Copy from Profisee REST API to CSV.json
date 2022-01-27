@@ -185,7 +185,8 @@
 									"path": "['internalId']"
 								},
 								"sink": {
-									"name": "internalId"
+									"name": "internalId",
+									"type": "Int64"
 								}
 							},
 							{
@@ -193,7 +194,8 @@
 									"path": "['id']"
 								},
 								"sink": {
-									"name": "id"
+									"name": "id",
+									"type": "String"
 								}
 							},
 							{
@@ -201,7 +203,8 @@
 									"path": "['code']"
 								},
 								"sink": {
-									"name": "code"
+									"name": "code",
+									"type": "String"
 								}
 							},
 							{
@@ -209,7 +212,8 @@
 									"path": "['name']"
 								},
 								"sink": {
-									"name": "name"
+									"name": "name",
+									"type": "String"
 								}
 							},
 							{
@@ -217,7 +221,8 @@
 									"path": "['first Name']"
 								},
 								"sink": {
-									"name": "first Name"
+									"name": "first Name",
+									"type": "String"
 								}
 							},
 							{
@@ -225,7 +230,8 @@
 									"path": "['last Name']"
 								},
 								"sink": {
-									"name": "last Name"
+									"name": "last Name",
+									"type": "String"
 								}
 							},
 							{
@@ -233,7 +239,8 @@
 									"path": "['tax ID']"
 								},
 								"sink": {
-									"name": "tax ID"
+									"name": "tax ID",
+									"type": "String"
 								}
 							},
 							{
@@ -241,7 +248,8 @@
 									"path": "['category']"
 								},
 								"sink": {
-									"name": "category"
+									"name": "category",
+									"type": "String"
 								}
 							},
 							{
@@ -249,7 +257,8 @@
 									"path": "['parent Customer']"
 								},
 								"sink": {
-									"name": "parent Customer"
+									"name": "parent Customer",
+									"type": "String"
 								}
 							},
 							{
@@ -257,7 +266,8 @@
 									"path": "['model Confidence']"
 								},
 								"sink": {
-									"name": "model Confidence"
+									"name": "model Confidence",
+									"type": "Int64"
 								}
 							},
 							{
@@ -265,104 +275,8 @@
 									"path": "['record Source']"
 								},
 								"sink": {
-									"name": "record Source"
-								}
-							},
-							{
-								"source": {
-									"path": "['match Status']"
-								},
-								"sink": {
-									"name": "match Status"
-								}
-							},
-							{
-								"source": {
-									"path": "['match Cluster']"
-								},
-								"sink": {
-									"name": "match Cluster"
-								}
-							},
-							{
-								"source": {
-									"path": "['match Member']"
-								},
-								"sink": {
-									"name": "match Member"
-								}
-							},
-							{
-								"source": {
-									"path": "['match Strategy']"
-								},
-								"sink": {
-									"name": "match Strategy"
-								}
-							},
-							{
-								"source": {
-									"path": "['match DateTime']"
-								}
-							},
-							{
-								"source": {
-									"path": "['match MultiGroup']"
-								}
-							},
-							{
-								"source": {
-									"path": "['match User']"
-								}
-							},
-							{
-								"source": {
-									"path": "['golden Record']"
-								}
-							},
-							{
-								"source": {
-									"path": "['proposed Count']"
-								}
-							},
-							{
-								"source": {
-									"path": "['approved Count']"
-								}
-							},
-							{
-								"source": {
-									"path": "['enterDTM']"
-								}
-							},
-							{
-								"source": {
-									"path": "['enterUserName']"
-								}
-							},
-							{
-								"source": {
-									"path": "['lastChgDTM']"
-								}
-							},
-							{
-								"source": {
-									"path": "['lastChgUserName']"
-								}
-							},
-							{
-								"source": {
-									"path": "['validationStatusID']"
-								}
-							},
-							{
-								"source": {
-									"path": "['canUpdate']"
-								}
-							},
-							{
-								"source": {
-									"path": "['canDelete']"
+									"name": "record Source",
+									"type": "String"
 								}
 							}
 						],
@@ -390,10 +304,7 @@
 						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference",
 						"parameters": {
-							"tablename": {
-								"value": "@variables('EntityId')",
-								"type": "Expression"
-							}
+							"tablename": "metadataProfisee"
 						}
 					}
 				]
