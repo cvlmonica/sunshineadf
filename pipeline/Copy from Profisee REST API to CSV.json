@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy from Profisee REST API to CSV",
+				"name": "Copy from Profisee REST API to Json",
 				"description": "Copy records from Profisee via the Profisee REST API to ADLS Gen2 in CSV format.",
 				"type": "Copy",
 				"dependsOn": [],
@@ -131,6 +131,314 @@
 								"type": "Expression"
 							}
 						}
+					}
+				]
+			},
+			{
+				"name": "Copy Json file to datbase",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Copy from Profisee REST API to Json",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate",
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "['internalId']"
+								},
+								"sink": {
+									"name": "internalId",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "['id']"
+								},
+								"sink": {
+									"name": "id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['code']"
+								},
+								"sink": {
+									"name": "code",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['name']"
+								},
+								"sink": {
+									"name": "name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['first Name']"
+								},
+								"sink": {
+									"name": "first Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['last Name']"
+								},
+								"sink": {
+									"name": "last Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['tax ID']"
+								},
+								"sink": {
+									"name": "tax ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['parent Customer']"
+								},
+								"sink": {
+									"name": "parent Customer",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['model Confidence']"
+								},
+								"sink": {
+									"name": "model Confidence",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "['record Source']"
+								},
+								"sink": {
+									"name": "record Source",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['match Status']"
+								},
+								"sink": {
+									"name": "match Status",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['match Cluster']"
+								},
+								"sink": {
+									"name": "match Cluster",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['match Member']"
+								},
+								"sink": {
+									"name": "match Member",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['match Strategy']"
+								},
+								"sink": {
+									"name": "match Strategy",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['match DateTime']"
+								},
+								"sink": {
+									"name": "match DateTime",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['match MultiGroup']"
+								},
+								"sink": {
+									"name": "match MultiGroup",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['match User']"
+								},
+								"sink": {
+									"name": "match User",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['golden Record']"
+								},
+								"sink": {
+									"name": "golden Record",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['proposed Count']"
+								},
+								"sink": {
+									"name": "proposed Count",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['approved Count']"
+								},
+								"sink": {
+									"name": "approved Count",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['enterDTM']"
+								},
+								"sink": {
+									"name": "enterDTM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['enterUserName']"
+								},
+								"sink": {
+									"name": "enterUserName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['lastChgDTM']"
+								},
+								"sink": {
+									"name": "lastChgDTM",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['lastChgUserName']"
+								},
+								"sink": {
+									"name": "lastChgUserName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['validationStatusID']"
+								},
+								"sink": {
+									"name": "validationStatusID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"path": "['canUpdate']"
+								},
+								"sink": {
+									"name": "canUpdate",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"path": "['canDelete']"
+								},
+								"sink": {
+									"name": "canDelete",
+									"type": "Boolean"
+								}
+							}
+						],
+						"collectionReference": "$['data']"
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Json1",
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": {
+								"value": "@variables('EntityId')",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference"
 					}
 				]
 			}
