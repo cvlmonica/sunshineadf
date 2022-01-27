@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy from table to Profisee REST API",
+				"name": "post call",
 				"description": "Copy records from ADLS Gen2 in CSV format to Profisee via the Profisee REST API.",
 				"type": "Copy",
 				"dependsOn": [],
@@ -106,7 +106,10 @@
 				"inputs": [
 					{
 						"referenceName": "AzureSqlTable1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"tablename": "address"
+						}
 					}
 				],
 				"outputs": [
