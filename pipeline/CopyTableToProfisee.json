@@ -105,7 +105,10 @@
 				"inputs": [
 					{
 						"referenceName": "AzureSqlTable1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"tablename": "address"
+						}
 					}
 				],
 				"outputs": [
