@@ -16,14 +16,14 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DelimitedTextSource",
+						"type": "JsonSource",
 						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
+							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
+							"type": "JsonReadSettings"
 						}
 					},
 					"sink": {
@@ -36,21 +36,63 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
+						"mappings": [
+							{
+								"source": {
+									"path": "['internalId']"
+								},
+								"sink": {
+									"name": "internalId"
+								}
+							},
+							{
+								"source": {
+									"path": "['id']"
+								},
+								"sink": {
+									"name": "id"
+								}
+							},
+							{
+								"source": {
+									"path": "['code']"
+								},
+								"sink": {
+									"name": "code"
+								}
+							},
+							{
+								"source": {
+									"path": "['name']"
+								},
+								"sink": {
+									"name": "name"
+								}
+							},
+							{
+								"source": {
+									"path": "['first Name']"
+								},
+								"sink": {
+									"name": "first Name"
+								}
+							},
+							{
+								"source": {
+									"path": "['last Name']"
+								},
+								"sink": {
+									"name": "last Name"
+								}
+							}
+						],
+						"collectionReference": "$['data']"
 					}
 				},
 				"inputs": [
 					{
-						"referenceName": "AdlsGen2BlobCsv",
-						"type": "DatasetReference",
-						"parameters": {
-							"FolderName": "datasource1",
-							"FileName": "customer.csv"
-						}
+						"referenceName": "Json1",
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [

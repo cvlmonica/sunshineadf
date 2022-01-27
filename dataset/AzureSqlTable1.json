@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "data",
-			"table": "customer"
+			"table": "metadata"
 		}
 	}
 }

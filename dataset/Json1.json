@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": "data_10914711-8550-4daf-af53-ad0b0a2bbc84_7299954e-c138-45c6-93d0-dc706a019f0b.json",
 				"folderPath": "Customer",
 				"container": "datasource1"
 			}
