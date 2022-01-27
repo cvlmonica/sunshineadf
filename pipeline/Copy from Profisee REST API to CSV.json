@@ -129,6 +129,10 @@
 							"filename": {
 								"value": "@variables('EntityId')",
 								"type": "Expression"
+							},
+							"container": {
+								"value": "@variables('OutputContainer')",
+								"type": "Expression"
 							}
 						}
 					}
@@ -430,6 +434,10 @@
 						"parameters": {
 							"filename": {
 								"value": "@variables('EntityId')",
+								"type": "Expression"
+							},
+							"container": {
+								"value": "@variables('OutputContainer')",
 								"type": "Expression"
 							}
 						}
