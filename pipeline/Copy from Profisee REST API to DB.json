@@ -177,6 +177,20 @@
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"logSettings": {
+						"enableCopyActivityLog": true,
+						"copyActivityLogSettings": {
+							"logLevel": "Info",
+							"enableReliableLogging": false
+						},
+						"logLocationSettings": {
+							"linkedServiceName": {
+								"referenceName": "AzureDataLakeStorageProfisee",
+								"type": "LinkedServiceReference"
+							}
+						}
+					},
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
@@ -260,24 +274,6 @@
 									"name": "parent Customer",
 									"type": "String"
 								}
-							},
-							{
-								"source": {
-									"path": "['model Confidence']"
-								},
-								"sink": {
-									"name": "model Confidence",
-									"type": "Int64"
-								}
-							},
-							{
-								"source": {
-									"path": "['record Source']"
-								},
-								"sink": {
-									"name": "record Source",
-									"type": "String"
-								}
 							}
 						],
 						"collectionReference": "$['data']"
@@ -304,7 +300,10 @@
 						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference",
 						"parameters": {
-							"tablename": "metadataProfisee"
+							"tablename": {
+								"value": "@concat(variables('EntityId'),'_Metadata')",
+								"type": "Expression"
+							}
 						}
 					}
 				]
