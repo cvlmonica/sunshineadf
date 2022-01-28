@@ -232,46 +232,73 @@
 							},
 							{
 								"source": {
-									"path": "['first Name']"
+									"path": "['address Line1']"
 								},
 								"sink": {
-									"name": "first Name",
+									"name": "address Line1",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "['last Name']"
+									"path": "['address Line2']"
 								},
 								"sink": {
-									"name": "last Name",
+									"name": "address Line2",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "['tax ID']"
+									"path": "['city']"
 								},
 								"sink": {
-									"name": "tax ID",
+									"name": "city",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "['category']"
+									"path": "['state']"
 								},
 								"sink": {
-									"name": "category",
+									"name": "state",
 									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"path": "['parent Customer']"
+									"path": "['country']"
 								},
 								"sink": {
-									"name": "parent Customer",
+									"name": "country",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['address Type']"
+								},
+								"sink": {
+									"name": "address Type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['customer']"
+								},
+								"sink": {
+									"name": "customer",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['postcode']"
+								},
+								"sink": {
+									"name": "postcode",
 									"type": "String"
 								}
 							}
@@ -316,7 +343,7 @@
 			},
 			"EntityId": {
 				"type": "String",
-				"defaultValue": "Customer"
+				"defaultValue": "Address"
 			}
 		},
 		"folder": {
