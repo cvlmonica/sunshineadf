@@ -76,6 +76,24 @@
 								"sink": {
 									"path": "$['Last Name']"
 								}
+							},
+							{
+								"source": {
+									"name": "email",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['email']"
+								}
+							},
+							{
+								"source": {
+									"name": "Record Source",
+									"type": "String"
+								},
+								"sink": {
+									"path": "$['Record Source']"
+								}
 							}
 						]
 					}
