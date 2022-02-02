@@ -1,0 +1,181 @@
+{
+	"name": "Copy from CSV to profisee db",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy from CSV to Profisee  Database",
+				"description": "Copy records from ADLS Gen2 in CSV format to Profisee via the Profisee REST API.",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "RestSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "\tID",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ID",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Code",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Code",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "\tFirst Name\t",
+									"type": "String"
+								},
+								"sink": {
+									"name": "First Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Last Name",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Last Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Tax ID ",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Tax ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "\tCategory",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Category",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "\tParent Customer\t",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Parent Customer",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Record Source\t",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Record Source",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Golden Record",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Golden Record",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "email\t",
+									"type": "String"
+								},
+								"sink": {
+									"name": "email",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "AdlsGen2BlobCsv",
+						"type": "DatasetReference",
+						"parameters": {
+							"FolderName": {
+								"value": "@pipeline().parameters.FileFolder",
+								"type": "Expression"
+							},
+							"FileName": {
+								"value": "@pipeline().parameters.FileName",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable2",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"parameters": {
+			"FileName": {
+				"type": "string",
+				"defaultValue": "CustomerNewDatabase.csv"
+			},
+			"FileFolder": {
+				"type": "string",
+				"defaultValue": "datasource1"
+			}
+		},
+		"folder": {
+			"name": "CSV Format"
+		},
+		"annotations": [],
+		"lastPublishTime": "2020-09-25T15:29:08Z"
+	}
+}

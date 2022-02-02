@@ -1,0 +1,66 @@
+{
+	"name": "AzureSqlTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabaseProfisee",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Code",
+				"type": "nvarchar"
+			},
+			{
+				"name": "NewCode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "First Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Last Name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Tax ID",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Category",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Parent Customer",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Record Source",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Golden Record",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Phone",
+				"type": "nvarchar"
+			},
+			{
+				"name": "email",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "stg",
+			"table": "tCustomer_Merge1"
+		}
+	}
+}
