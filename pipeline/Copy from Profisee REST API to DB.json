@@ -200,7 +200,7 @@
 								},
 								"sink": {
 									"name": "internalId",
-									"type": "Int64"
+									"type": "Int32"
 								}
 							},
 							{
@@ -218,15 +218,6 @@
 								},
 								"sink": {
 									"name": "code",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"path": "['name']"
-								},
-								"sink": {
-									"name": "name",
 									"type": "String"
 								}
 							},
@@ -328,7 +319,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"tablename": {
-								"value": "@concat(variables('EntityId'),'_Metadata')",
+								"value": "@concat('Managed_',variables('EntityId'),'_Metadata')",
 								"type": "Expression"
 							}
 						}
